@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body{
+            background-color: rgb(197, 247, 247);
+            color: black;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Calulator using BOM(prompt,alert,confirm)</h1>
+  <script>
+
+    let option = prompt("Select Your Options:\n 1.Basic Arithmetic Operation(+,-,*,/)\n 2.Currency Convertion(Dollar into Rupee vice versa)\n3.Weight Conversion(Kg to Gram)\n 4.Temperature Conversion(Celsius to Fahrenheit)\nEnter Choice(1,2,3,4):");
+    switch(option){
+        case '1':
+            let number1 = parseFloat(prompt("Enter Number 1:"));
+            let number2 = parseFloat(prompt("Enter Number 2:"));
+            let operation = prompt("Enter operations: +,-,*,/");
+            let result;
+            if(operation ==='+')result = number1+number2;
+            else if(operation ==='-') result = number1-number2;
+            else if(operation ==='*') result  = number1*number2;
+            else if (operation==='/') result =number1/number2;
+            else result = "Invalid Operation";
+
+            alert("Result:"+result);
+            break;
+        case '2':    
+             let currencyChoice = prompt("Enter '1' to convert Dollar into Rupee and '2' to convert Rupee to Dollar:"); 
+             let amount  = parseFloat(prompt("Enter amount:"));
+             
+             let exchangeRate = 84.08;
+             if(currencyChoice ==='1'){
+
+                let result =  amount*exchangeRate;
+                alert("Result="+ result+"Rupees");
+             }else if(currencyChoice ==='2'){
+                let result = amount/exchangeRate;
+                alert("Result="+ result+"Dollar");
+             }else{
+                alert("Invalid currency Choice.");
+             }
+            break;
+        case '3':
+            let kg = parseFloat(prompt("Enter Weight in Kilogram(Kg)") );
+            alert("result"+(kg*1000)+" "+"Grams") 
+            break;  
+        case '4' :
+             let cs = parseFloat(prompt("Enter Temperature in Celsius")) ;
+             let Fahrenheit = (cs*9/5)+32;
+             alert("Result ="+Fahrenheit+"Fahrenheit");   
+             break;
+
+            default:alert("Invalid Choice")
+    }
+
+
+  </script>  
+</body>
+</html>
